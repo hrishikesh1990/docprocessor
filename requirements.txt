@@ -1,6 +1,6 @@
 fastapi
 python-multipart
-fitz-python
+PyMuPDF
 pdfplumber
 pytesseract
 Pillow
