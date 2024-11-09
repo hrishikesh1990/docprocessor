@@ -3,7 +3,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from typing import Dict, Any, Optional
 import magic
 import httpx
-from .utils.pdf_processor import PDFProcessor
+from utils.pdf_processor import PDFProcessor
 
 app = FastAPI(
     title="Document Processor",
