@@ -94,25 +94,16 @@ class DocumentProcessor:
         try:
             logger.info("Attempting OCR extraction")
             logger.info("Converting PDF to images...")
-            
-            # Add debugging for PDF content
             logger.info(f"PDF bytes length: {len(self.file_bytes)}")
             
-            try:
-                # Try to open PDF with PyMuPDF to check validity
-                doc = fitz.open(stream=self.file_bytes, filetype="pdf")
-                logger.info(f"PDF has {len(doc)} pages")
-            except Exception as pdf_error:
-                logger.error(f"Failed to validate PDF: {str(pdf_error)}")
-            
-            # Try conversion with explicit DPI
+            # Convert with lower DPI and maximum dimension limit
             images = convert_from_bytes(
                 self.file_bytes,
-                dpi=300,  # Explicit DPI setting
-                fmt='jpeg',  # Use JPEG format
-                output_folder=None,  # Keep in memory
+                dpi=150,  # Lower DPI (was 300)
+                fmt='jpeg',
+                output_folder=None,
                 paths_only=False,
-                poppler_path=None  # Let it find poppler automatically
+                size=(2000, None)  # Limit maximum width to 2000 pixels
             )
             
             if not images:
@@ -124,7 +115,14 @@ class DocumentProcessor:
             for i, image in enumerate(images):
                 try:
                     logger.info(f"Processing page {i+1} with OCR...")
-                    # Save image quality and DPI info for debugging
+                    # Resize if image is still too large
+                    max_dimension = 4000
+                    if max(image.size) > max_dimension:
+                        ratio = max_dimension / max(image.size)
+                        new_size = tuple(int(dim * ratio) for dim in image.size)
+                        image = image.resize(new_size, Image.Resampling.LANCZOS)
+                        logger.info(f"Resized image to {image.size}")
+                    
                     logger.info(f"Image size: {image.size}, mode: {image.mode}")
                     page_text = pytesseract.image_to_string(image)
                     
