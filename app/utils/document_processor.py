@@ -93,23 +93,54 @@ class DocumentProcessor:
         # Fall back to OCR
         try:
             logger.info("Attempting OCR extraction")
+            logger.info("Converting PDF to images...")
             images = convert_from_bytes(self.file_bytes)
+            logger.info(f"Successfully converted PDF to {len(images)} images")
+            
             text = ""
             for i, image in enumerate(images):
                 try:
+                    logger.info(f"Processing page {i+1} with OCR...")
+                    # Save image quality and DPI info for debugging
+                    logger.info(f"Image size: {image.size}, mode: {image.mode}")
                     page_text = pytesseract.image_to_string(image)
+                    
+                    if not page_text.strip():
+                        logger.warning(f"No text extracted from page {i+1}")
+                    else:
+                        logger.info(f"Successfully extracted {len(page_text)} characters from page {i+1}")
+                    
                     text += page_text + "\n"
-                    logger.info(f"Successfully extracted text from page {i+1}")
+                    
                 except Exception as page_error:
-                    logger.error(f"Failed to OCR page {i+1}: {str(page_error)}")
+                    logger.error(f"Failed to OCR page {i+1}: {str(page_error)}", exc_info=True)
             
             if not text.strip():
-                raise Exception("OCR extraction produced no text")
+                logger.error("OCR extraction produced no text for any page")
+                # Try with different image parameters
+                logger.info("Retrying with different image parameters...")
+                text = ""
+                for i, image in enumerate(images):
+                    try:
+                        # Convert to grayscale and enhance contrast
+                        gray_image = image.convert('L')
+                        page_text = pytesseract.image_to_string(
+                            gray_image,
+                            config='--psm 1 --oem 3'  # Use more aggressive OCR settings
+                        )
+                        text += page_text + "\n"
+                        logger.info(f"Retry: Extracted {len(page_text)} characters from page {i+1}")
+                    except Exception as retry_error:
+                        logger.error(f"Retry failed for page {i+1}: {str(retry_error)}", exc_info=True)
+            
+            final_text = text.strip()
+            if not final_text:
+                raise Exception("OCR extraction produced no text after all attempts")
                 
-            return text.strip(), ExtractionMethod.OCR
+            return final_text, ExtractionMethod.OCR
             
         except Exception as e:
-            logger.error(f"OCR extraction failed: {str(e)}")
+            logger.error(f"OCR extraction failed: {str(e)}", exc_info=True)
             raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
     def _process_doc(self) -> Tuple[str, ExtractionMethod]:
