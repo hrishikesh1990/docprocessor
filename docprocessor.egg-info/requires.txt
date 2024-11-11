@@ -1,0 +1,8 @@
+fastapi
+python-multipart
+PyMuPDF
+pdfplumber
+pytesseract
+Pillow
+pdf2image
+python-magic

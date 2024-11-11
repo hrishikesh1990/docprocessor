@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: docprocessor
+Version: 1.0.0
+Requires-Dist: fastapi
+Requires-Dist: python-multipart
+Requires-Dist: PyMuPDF
+Requires-Dist: pdfplumber
+Requires-Dist: pytesseract
+Requires-Dist: Pillow
+Requires-Dist: pdf2image
+Requires-Dist: python-magic

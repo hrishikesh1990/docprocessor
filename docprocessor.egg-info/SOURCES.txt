@@ -1,0 +1,12 @@
+setup.py
+app/__init__.py
+app/main.py
+app/utils/__init__.py
+app/utils/document_processor.py
+app/utils/link_extractor.py
+app/utils/pdf_processor.py
+docprocessor.egg-info/PKG-INFO
+docprocessor.egg-info/SOURCES.txt
+docprocessor.egg-info/dependency_links.txt
+docprocessor.egg-info/requires.txt
+docprocessor.egg-info/top_level.txt
