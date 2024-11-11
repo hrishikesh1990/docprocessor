@@ -87,14 +87,37 @@ class DocumentProcessor:
             if text.strip() and not self._is_garbage_text(text):
                 return text, ExtractionMethod.PYMUPDF
                 
-        except Exception:
-            pass  # If PyMuPDF fails, continue to OCR
+        except Exception as e:
+            logger.error(f"PyMuPDF extraction failed: {str(e)}", exc_info=True)
         
         # Fall back to OCR
         try:
             logger.info("Attempting OCR extraction")
             logger.info("Converting PDF to images...")
-            images = convert_from_bytes(self.file_bytes)
+            
+            # Add debugging for PDF content
+            logger.info(f"PDF bytes length: {len(self.file_bytes)}")
+            
+            try:
+                # Try to open PDF with PyMuPDF to check validity
+                doc = fitz.open(stream=self.file_bytes, filetype="pdf")
+                logger.info(f"PDF has {len(doc)} pages")
+            except Exception as pdf_error:
+                logger.error(f"Failed to validate PDF: {str(pdf_error)}")
+            
+            # Try conversion with explicit DPI
+            images = convert_from_bytes(
+                self.file_bytes,
+                dpi=300,  # Explicit DPI setting
+                fmt='jpeg',  # Use JPEG format
+                output_folder=None,  # Keep in memory
+                paths_only=False,
+                poppler_path=None  # Let it find poppler automatically
+            )
+            
+            if not images:
+                raise Exception("PDF to image conversion produced no images")
+                
             logger.info(f"Successfully converted PDF to {len(images)} images")
             
             text = ""
