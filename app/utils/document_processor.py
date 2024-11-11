@@ -21,6 +21,8 @@ class DocumentProcessor:
     def __init__(self, file_bytes: bytes, mime_type: str):
         self.file_bytes = file_bytes
         self.mime_type = mime_type
+        self._extracted_text = None  # Cache for extracted text
+        self._extraction_method = None
         self.url_patterns = {
             'linkedin': r'https?://(?:www\.)?linkedin\.com/\S+',
             'github': r'https?://(?:www\.)?github\.com/\S+',
@@ -29,14 +31,20 @@ class DocumentProcessor:
 
     def process(self) -> Tuple[str, ExtractionMethod]:
         """Process the document and return extracted text and method used"""
+        if self._extracted_text is not None:
+            return self._extracted_text, self._extraction_method
+            
         if self.mime_type.startswith('image/'):
-            return self._process_image(), ExtractionMethod.OCR
+            self._extracted_text = self._process_image()
+            self._extraction_method = ExtractionMethod.OCR
         elif self.mime_type == 'application/pdf':
-            return self._process_pdf()
+            self._extracted_text, self._extraction_method = self._process_pdf()
         elif self.mime_type in ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']:
-            return self._process_doc()
+            self._extracted_text, self._extraction_method = self._process_doc()
         else:
             raise ValueError(f"Unsupported file type: {self.mime_type}")
+            
+        return self._extracted_text, self._extraction_method
 
     def _process_image(self) -> str:
         """Process image files using OCR"""
@@ -268,15 +276,13 @@ class DocumentProcessor:
         
         try:
             # Get text content (use the already extracted text if available)
-            if hasattr(self, '_extracted_text'):
-                extracted_text = self._extracted_text
-            else:
-                extracted_text, _ = self.process()
+            if self._extracted_text is None:
+                self._extracted_text, self._extraction_method = self.process()
             
-            return LinkExtractor.extract_all_links(self.file_bytes, extracted_text)
+            return LinkExtractor.extract_all_links(self.file_bytes, self._extracted_text)
             
         except Exception as e:
-            print(f"Error extracting links: {str(e)}")
+            logger.error(f"Error extracting links: {str(e)}")
             return {
                 'web_links': [],
                 'linkedin': [],
