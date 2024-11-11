@@ -8,6 +8,9 @@ from enum import Enum
 from typing import Tuple, Dict, List
 import docx
 from .link_extractor import LinkExtractor
+import logging
+
+logger = logging.getLogger(__name__)
 
 class ExtractionMethod(Enum):
     PYMUPDF = "pymupdf"
@@ -89,12 +92,24 @@ class DocumentProcessor:
         
         # Fall back to OCR
         try:
+            logger.info("Attempting OCR extraction")
             images = convert_from_bytes(self.file_bytes)
             text = ""
-            for image in images:
-                text += pytesseract.image_to_string(image) + "\n"
+            for i, image in enumerate(images):
+                try:
+                    page_text = pytesseract.image_to_string(image)
+                    text += page_text + "\n"
+                    logger.info(f"Successfully extracted text from page {i+1}")
+                except Exception as page_error:
+                    logger.error(f"Failed to OCR page {i+1}: {str(page_error)}")
+            
+            if not text.strip():
+                raise Exception("OCR extraction produced no text")
+                
             return text.strip(), ExtractionMethod.OCR
+            
         except Exception as e:
+            logger.error(f"OCR extraction failed: {str(e)}")
             raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
     def _process_doc(self) -> Tuple[str, ExtractionMethod]:

@@ -13,5 +13,7 @@ setup(
         "Pillow",
         "pdf2image",
         "python-magic",
+        "httpx",
+        "uvicorn",
     ],
 ) 
