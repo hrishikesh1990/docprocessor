@@ -7,6 +7,7 @@ import logging
 import json
 from typing import List, Dict
 import os
+import csv
 
 # Set up logging
 logging.basicConfig(
@@ -20,12 +21,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class APITester:
-    def __init__(self, csv_path: str, concurrent_requests: int = 10):
+    def __init__(self, csv_path: str, concurrent_requests: int = 5):
         self.csv_path = csv_path
         self.concurrent_requests = concurrent_requests
         self.api_url = "https://utils.flexiple.com/process-document/"
         self.results_dir = "test_results"
         os.makedirs(self.results_dir, exist_ok=True)
+        self.headers = {
+            'X-API-Key': '2beeac086729f8bbed029a469e96b38d',
+            'accept': 'application/json'
+        }
 
     async def process_url(self, session: aiohttp.ClientSession, url: str) -> Dict:
         """Process a single URL through the API"""
@@ -34,7 +39,7 @@ class APITester:
             data = aiohttp.FormData()
             data.add_field('url', url)
             
-            async with session.post(self.api_url, data=data) as response:
+            async with session.post(self.api_url, data=data, headers=self.headers) as response:
                 duration = time.time() - start_time
                 status = response.status
                 
@@ -71,12 +76,35 @@ class APITester:
             return await asyncio.gather(*tasks)
 
     def save_results(self, results: List[Dict], batch_num: int):
-        """Save batch results to a JSON file"""
+        """Save batch results to JSON and CSV files"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = os.path.join(self.results_dir, f"batch_{batch_num}_{timestamp}.json")
-        with open(filename, 'w') as f:
+        
+        # Save JSON (existing functionality)
+        json_filename = os.path.join(self.results_dir, f"batch_{batch_num}_{timestamp}.json")
+        with open(json_filename, 'w') as f:
             json.dump(results, f, indent=2)
-        logger.info(f"Saved results to {filename}")
+        
+        # Save CSV
+        csv_filename = os.path.join(self.results_dir, f"batch_{batch_num}_{timestamp}.csv")
+        if results and 'response' in results[0]:  # Check if we have successful results
+            # Get columns from the first successful response
+            fieldnames = ['url', 'status_code', 'duration', 'timestamp'] + list(results[0]['response'].keys())
+            
+            with open(csv_filename, 'w', newline='') as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                for result in results:
+                    row = {
+                        'url': result['url'],
+                        'status_code': result['status_code'],
+                        'duration': result['duration'],
+                        'timestamp': result['timestamp']
+                    }
+                    if 'response' in result:
+                        row.update(result['response'])
+                    writer.writerow(row)
+        
+        logger.info(f"Saved results to {json_filename} and {csv_filename}")
 
     async def run(self):
         """Run the API test"""
@@ -129,7 +157,7 @@ def main():
     # Create tester instance
     tester = APITester(
         csv_path='pdf_urls.csv',  # Your CSV file with URLs
-        concurrent_requests=10     # Number of concurrent requests
+        concurrent_requests=5     # Number of concurrent requests
     )
     
     # Run the test
