@@ -1,10 +1,11 @@
 # app/main.py
-from fastapi import FastAPI, UploadFile, File, HTTPException, Form
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Security
 from typing import Dict, Any, Optional
 import magic
 import httpx
 import logging
 from app.utils.document_processor import DocumentProcessor, ExtractionMethod
+from app.auth.auth_handler import get_api_key
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -32,7 +33,8 @@ async def root() -> Dict[str, str]:
 @app.post("/process-document/")
 async def process_document(
     file: Optional[UploadFile] = File(None),
-    url: Optional[str] = Form(None)
+    url: Optional[str] = Form(None),
+    api_key: str = Security(get_api_key)
 ) -> Dict[str, Any]:
     logger.info(f"Received request - file: {file}, url: {url}")
     

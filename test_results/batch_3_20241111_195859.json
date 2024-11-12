@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/8513/resume_pdf/6683f65e7805829d784b9a7528ba5237.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=10f1b01ee1a5e372478b49a74e30d2e9624ca968b345f2610d47d41da675055f",
+    "status_code": 500,
+    "duration": 70.2548770904541,
+    "timestamp": "2024-11-11T19:58:59.650063",
+    "error": "{\"detail\":\"\"}"
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/8492/resume_pdf/a88ac117b566be9dd54061732f6a8386.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9ec72a17de4b6d99a74c424210d22706ab1e994613af1ec71e546726834bc493",
+    "status_code": 200,
+    "duration": 29.808737754821777,
+    "timestamp": "2024-11-11T19:58:19.204771",
+    "response": {
+      "filename": "a88ac117b566be9dd54061732f6a8386.pdf",
+      "content_type": "application/pdf",
+      "detected_mime_type": "application/pdf",
+      "extraction_method": "ocr",
+      "extracted_text": "Rakshit Sharma\n\nFull Stack Software Developer\nrakshitsharma3 103@gmail.com | +917232076588 | Jaipur, Rajasthan.\nPortfolio | Linkedin | GitHub | LeetCode\n\nEducation\nAnand International College of Engineering Jaipur, Rajasthan\nBTech || Computer Science September 2020 - June 2024\nGPA: 9.4\n\nExperience\ne@ Octanet Software-Services | Web developer Intern Aug 2023 - Sept 2023\n\n\u00a2 Executed tasks with precision and efficiency, uses MERN Stack for developing frontend and Backend.\n\u00a2 Acquired hands-on experience in React JS library, workflows, and NoSQL database MongoDB. Holding a growth\nmindset that allows me to always grow by learning new Technologies.\n\ne Celebal Technologies | Node JS developer Intern May 2023 - July 2023\n* Tech Stack Used: Node.js, Express.js, SQL for development. Jaipur (Remote)\n\u00a2 Worked on REST APIs, CRUD operations, optimizing SQL queries and validating routes and requests.\nSkills\n\nProgramming Languages: Java, JavaScript\n\nLibraries/Frameworks: React JS, Node JS, Express JS, Rest APIs\n\nTools/Platforms: VS Code, GitHub, Git, Bootstrap, Agile Methodology (Basics)\n\nDatabases: MongoDB, MySQL\n\nGood understanding of OOPS Concepts.\n\nProjects /_ Open-Source\n\ne ChatBuzz- ChatApp | Link (Node JS, Express JS, React, JS, MongoDB)\nDeveloped a full stack chat application using the MERN stack (MongoDB, Express.js, React.js, Node.js) with\nreal-time communication features. Enabled secure user registration and login functionality, Implemented features to\nshow the online status of users, enhancing the interactive experience. Achieved a secure and responsive platform with\npersistent data storage and user authentication. Applied Socket.io functionality for real time interaction.\n\ne NewsMood-Daily News Updates | Link (React, JavaScript, CSS, HTML)\nNewsMood is your one-stop destination for staying informed and entertained simultaneously. This innovative\nwebpage leverages the power of APIs to bring you the freshest news. Implemented React Components, React Dom,\nInfinite Scroll components, etc.\n\ne Portfolio | Link (React, JavaScript, CSS, HTML)\nThis website showcases my skills, certifications, projects that I have Implemented and my experiences.\n\nTechnology stacks includes frontend libraries React JS, and uses React components, CORS, Axios, react router dom\nand many more.\n\nExecuted development with precision and efficiency and created Responsive portfolio which can be viewed\n\non any device.\n\ne TuniFY-Listen to your favorite Playlists | Link (HTML, CSS, JavaScript)\nIntroducing Tunify, our go-to music platform that offers a unique listening experience.\n\nApplied JavaScript concepts like Event Listener on play/ pause clicks, live updating of seek bar/progress bar of song\nwhich is playing.\nAchievements\n\ne Solved 200+ Coding Problems on Leetcode, GFG.\n\ne 1431 rated at LeetCode?\n\ne 1996 rank in NCAT All India Aptitude Test conducted by Naukri.com.\n\nCertifications\n\nWeb Development Skill Badge - IBM [Link]\nJavaScript Certification - Infosys SpringBoard [Link\n\nProblem Solving Certificate - HackerRank [Link]\nJava - HT Bombay [Link]\nGenerative-Al at SAP Certificate [Link",
+      "links": {
+        "web_links": [
+          "https://drive.google.com/file/d/1c3l7JrQT4h3r0aP-bqY7cPdfLdzQS_HA/view?usp=sharing",
+          "https://chatbuzz-chatapp.onrender.com/",
+          "https://rakshitsharma-portfolio.netlify.app/",
+          "https://www.credly.com/badges/e0ab7033-3fec-48a8-b6fe-0141eb4b8196/linked_in_profile",
+          "https://leetcode.com/u/its_RakshitSharma/",
+          "https://drive.google.com/file/d/1n1_mHNVW3dkT4bfHcSwywV_-kcIeIOJt/view",
+          "https://rakshitsharma3103.github.io/Tunify/",
+          "mailto:rakshitsharma3103@gmail.com",
+          "https://drive.google.com/file/d/1Z8iBzC7ALLDTx7y21PeykccOFdsrl4XH/view?usp=sharing",
+          "https://drive.google.com/file/d/1lOFt2I9dv51IWuR3Pr42xecTNP8Sh6sy/view?usp=sharing",
+          "https://www.hackerrank.com/certificates/badb61eb4788",
+          "https://leetcode.com/its_RakshitSharma/"
+        ],
+        "linkedin_links": [
+          "https://www.linkedin.com/in/rakshit-sharma-056737209/"
+        ],
+        "github_links": [
+          "https://github.com/rakshitsharma3103/NewsMood",
+          "https://github.com/rakshitsharma3103"
+        ],
+        "stackoverflow_links": [],
+        "email_links": [
+          "rakshitsharma3103@gmail.com"
+        ],
+        "text_links": [],
+        "annotation_links": [
+          "https://drive.google.com/file/d/1c3l7JrQT4h3r0aP-bqY7cPdfLdzQS_HA/view?usp=sharing",
+          "https://chatbuzz-chatapp.onrender.com/",
+          "https://rakshitsharma-portfolio.netlify.app/",
+          "https://www.credly.com/badges/e0ab7033-3fec-48a8-b6fe-0141eb4b8196/linked_in_profile",
+          "https://leetcode.com/u/its_RakshitSharma/",
+          "https://drive.google.com/file/d/1n1_mHNVW3dkT4bfHcSwywV_-kcIeIOJt/view",
+          "https://github.com/rakshitsharma3103",
+          "https://rakshitsharma3103.github.io/Tunify/",
+          "https://www.hackerrank.com/certificates/badb61eb4788",
+          "mailto:rakshitsharma3103@gmail.com",
+          "https://drive.google.com/file/d/1Z8iBzC7ALLDTx7y21PeykccOFdsrl4XH/view?usp=sharing",
+          "https://drive.google.com/file/d/1lOFt2I9dv51IWuR3Pr42xecTNP8Sh6sy/view?usp=sharing",
+          "https://www.linkedin.com/in/rakshit-sharma-056737209/",
+          "https://github.com/rakshitsharma3103/NewsMood",
+          "https://leetcode.com/its_RakshitSharma/"
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/8520/resume_pdf/1a777405f47fa889aadd21ec34e96af9.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b4b3d0571365dfcbc1361302ffc38e91e7313bbf4cb95ce4ad4d66d8f2fa935b",
+    "status_code": 200,
+    "duration": 21.15273904800415,
+    "timestamp": "2024-11-11T19:58:10.549038",
+    "response": {
+      "filename": "1a777405f47fa889aadd21ec34e96af9.pdf",
+      "content_type": "application/pdf",
+      "detected_mime_type": "application/pdf",
+      "extraction_method": "ocr",
+      "extracted_text": "Abhay Ray\n\noJ +91 782-783-6705 Sabhayray8707@gmail.com [I linkedin.com/abhay-ray \u00a9) github.com/Abhay-ray\n\nEducation\nMDU Rohtak July 2022\nBachelor of Computer Application(BCA) Gurugram, Haryana\n\n\u00a2 Relevant Coursework: Data Structures and Algorithms (Java), DBMS - Introduction to database, MySQL, Web\nTechnologies - HTML, CSS, JavaScript, Artificial Intelligence - Basics of Al, Natural language processing (NLP)\nDucat Nov 2022 - Nov 2023\nJava Full Stack (Certificate) Gurugram, Haryana\n\u00a2 Relevant Coursework: Learn Java programming and full stack development from scratch also learn about web\ndevelopment and database management completed projects by implementing our skills\ne RESTFul API Development: Design and Implemented RESTFul Api to enable communication between backend and\n\nfrontend\nExperience\nAAM Infotech Pvt. Ltd. Nov 2023 - April 2024\nJava Full Stack Intern Gurugram, Haryana\n\ne Implemented micro-services architecture using Spring Boot and Java, improving API response time by 25% and\nreducing server load by 30%.\n\ne Led across-functional team in implementing a new feature using React, resulting in a 20% increase in user\nengagement within the first month.\n\n\u00ab Optimized MySQL database queries, reducing page load times by 15% and enhancing overall application\nperformance.\n\nProjects\n\nTour and Travels Website \u20ac) | Java, JSP, Servlet, MySQL, CSS, JavaScript\ne Led the development of a Website using java, resulting in a 40% increase in daily transactions within the first\nquarter.\ne Designed and deployed a Back-end, front-end and Database using MySQL, achieving a 30% improvement in data\nretrieval speed.\n\u00a2 Implemented a real-time data-entry and admin portal using servlet and filter reducing response time by 20%.\n\u00a2 Implemented a OTP functionality using SMTP increasing security by 30%.\n\nCRUD Application \u00a9 | Spring Boot, Java, React.js, Material-UI, Hibernate\n\u00a2 Developed a data visualization Table using Material-UI, Link pages by implemented React-Router-Dom with\nreal-time insights.\ne Implement RESTFul-API by Rest-controller.\ne Build a database connectivity by hibernate framework for reducing response time by 40%.\n\nFood Website | React, Material-Ul, Slider, Bootstrap, JavaScript\n\u00a2 Developed a food website by implemented React, React-Router-Dom by reducing time by 20%.\n\u00ab Optimized website performance to improve page load times and enhance user experience.\n\nTechnical Skills\n\nLanguages: Java, JavaScript, React.js;\n\nConcepts: Compiler, Operating System, Virtual Memory, Cache Memory, Encryption, Decryption, Artificial Intelligence,\nAPI, Database, Agile Methodology;\n\nDBMS: MySQL, JDBC;\n\nFrameworks: Hibernate, Tailwind-CSS,Spring Boot, Bootstrap, Material-UI;\n\nWeb Technologies: HTML5, CSS, Servlet, Java Server Pages(JSP);\n\nApplication Server: Apache Tomcat;",
+      "links": {
+        "web_links": [
+          "mailto:abhayray8707@gmail.com"
+        ],
+        "linkedin_links": [
+          "https://www.linkedin.com/in/abhay-ray-ar"
+        ],
+        "github_links": [
+          "https://github.com/Abhay8707",
+          "https://github.com/Abhay8707/CRUD/tree/my-new-branch",
+          "https://github.com/Abhay8707/Food_Website/tree/my-branch",
+          "https://github.com/Abhay8707/Tour-Travels"
+        ],
+        "stackoverflow_links": [],
+        "email_links": [
+          "abhayray8707@gmail.com"
+        ],
+        "text_links": [],
+        "annotation_links": [
+          "https://github.com/Abhay8707",
+          "https://github.com/Abhay8707/Food_Website/tree/my-branch",
+          "https://www.linkedin.com/in/abhay-ray-ar",
+          "mailto:abhayray8707@gmail.com",
+          "https://github.com/Abhay8707/CRUD/tree/my-new-branch",
+          "https://github.com/Abhay8707/Tour-Travels"
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/8532/resume_pdf/61db13950547d0e5d47c103696ff64ff.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8886bf49e5c54d687e04752f592dd7658fc3aef2ba3b6a10203dd43b420f5eeb",
+    "status_code": 200,
+    "duration": 70.2509880065918,
+    "timestamp": "2024-11-11T19:58:59.647531",
+    "response": {
+      "filename": "61db13950547d0e5d47c103696ff64ff.pdf",
+      "content_type": "application/pdf",
+      "detected_mime_type": "application/pdf",
+      "extraction_method": "ocr",
+      "extracted_text": "TOGETHER -\n\nLET\u2019S WORK TOGETHER -\n\nLET\u2019S WORK TOGETHER - LET\u2019S WORK TOGETHER - LET\u2019S WORK\n\njuhiuiux@gmail.com\n\nJuhiGori, +\nUX/UI Designer\n\n& +919930027456\n\nQ Juhi Portfolio\n\nProfessional ERM - Dashboard for safety experts\nExperience & X/UI Desi Crafti Ui 1/UX for C d Saf\nInternships UX/UI Designer rafting compelling UI/UX for Connected Safety,\n\nMar 2022-Present ESG Fusion, and Mine Assure.\nLed projects from requirements to delivery, also\nsupported marketing for heightened project\nvisibility and success.\n\nSkills: Collaboration - Requirement gathering -\nUser Research - User Interface - Stake holder\nmanagement - Marketing\n\nFreelance - Worked with multiple Startups\n\nUX/UI Designer Worked with amazing startups in finance and\nJun 2021-Feb 2022 __ travel domain\nSkills: Communication - Client Management -\n\nUser Research - User Interface - Collaboration\n\nDirt Cube - Start-up Innovating Interactive Entertainment\n\nUX/UI Designer\n-Internship\n\nDec 2020 - Mar 2021\n\nDesigned flows and interface for Capshot\n\nSkills: Design basics - UX/UI - User testing -\nUser Interviews\n\nCertificates, Courses & Learnings\n\nM User Experience Principles and Processes\nUniversity Of Michigan\n\nEmotional Design\nInteraction Design Foundation\n\nSkills | bring Tools | work with\n\n* | create designs that are innovative and practical\n\n+ Excellent communication and collaboration skills to\nwork closely with cross-functional teams.\n\n+ Proficiency in design software and tools.\n\n+ End-to-End project ownership\n\n+ Versatility across B2B and B2C products\n\nEducation B.E Computer Engineering\n\nK. J. Somaiya Institute of\nTechnology\n\nJuly 2017 - 2021 | C.G.P.A-9.0\n\nFigma: for collaborative design,\nprototyping, and design system\nmanagement, for brainstorming,\nmapping user flows, and creating user\njourney maps\n\nNotion: for documentation and sprint\nmanagement\n\nCritical thinking, problem-solving,\nprogramming, data structures,\nalgorithms, software engineering,\ncomputer architecture, computer\nnetworks, operating systems, machine\nlearning, artificial intelligence",
+      "links": {
+        "web_links": [
+          "mailto:juhiuiux@gmail.com",
+          "https://funky-wheel-560488.framer.app/",
+          "https://www.figma.com/proto/KFnl9PzIG40DF6g53dC5Iz/Portfolio2024-Juhi?page-id=608%3A730&type=design&node-id=749-224&viewport=491%2C360%2C0.03&t=QKx2coIBJYCmNuql-1&scaling=min-zoom&starting-point-node-id=749%3A224&mode=design",
+          "https://+91 9930027456"
+        ],
+        "linkedin_links": [],
+        "github_links": [],
+        "stackoverflow_links": [],
+        "email_links": [],
+        "text_links": [],
+        "annotation_links": [
+          "mailto:juhiuiux@gmail.com",
+          "https://funky-wheel-560488.framer.app/",
+          "https://www.figma.com/proto/KFnl9PzIG40DF6g53dC5Iz/Portfolio2024-Juhi?page-id=608%3A730&type=design&node-id=749-224&viewport=491%2C360%2C0.03&t=QKx2coIBJYCmNuql-1&scaling=min-zoom&starting-point-node-id=749%3A224&mode=design",
+          "https://+91 9930027456"
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/83022/resume_pdf/d4c5fc68e7e19be1989d3900e36864fa.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bc65c093cf6772f7ddaafcb4c6c1117d7e52220f8d69776886f9a0f9e997d2ac",
+    "status_code": 200,
+    "duration": 56.114898920059204,
+    "timestamp": "2024-11-11T19:58:45.511661",
+    "response": {
+      "filename": "d4c5fc68e7e19be1989d3900e36864fa.pdf",
+      "content_type": "application/pdf",
+      "detected_mime_type": "application/pdf",
+      "extraction_method": "ocr",
+      "extracted_text": "R kesavan\n\nChennai, Tamilnadu, India + Phone: 9884600311 \u00a2 Email: kesavan7000@gmail.com\n\nEXPERIENCE\n\n05/2021 \u2014 Present COMCAST INDIA Chennai\n\nBig Data Architect\n\ne\n\n\u00b0\n\nEn\n\nDevelop and Implement Hadoop, Spark, Big Data Analytics and Integrations\n\nBuilt tested and deployed scalable and highly available Spark Data Processing\n\nFramework in aws\n\nSelecting appropriate Cloud services to design and deploy an application based on given\nRequirements\n\nBuild the workflow in aws using the state machine and step function., Lambda, Glue,Rds, Redshift\nDeploy and Run Spark Application in AWS EMR and have experienced with S3,EC2,\n\nAWS VPC and subnet,Public and private Gateway\n\nBuild the spark data ingestion framework to load the data from hadoop/terradata to aws s3\n\nBuild the databricks data pipeline using pyspark.\n\nv - Python, Pyspark,Aws,Aws Cloudformation,Aws Glue,Aws Lamda,S3\n\nRedis,Aws Step Function ,Aws State Machine, Athena,Scala,Databricks,Redshift\n\n01/2019 \u2014 05/2021 STANDARD CHARTED BANK GBS\n\nTechnical Manager Chennai\n\n\u00b0\n\ne\n\nBuilt tested and deployed salable and highly available modular software products\n\nProvide technical and architectural subject matter expertise on Hortonworks Data Platform using\nPyspark, python and hive\n\nDevelop and Implement Hadoop, Spark, Big Data Analytics and Integrations\n\nProvide expert level guidance on Big Data best practices and standards\n\nCreated Hive External tables and loaded the data into tables and query data using HQL.\nDeveloped Spark code using python and Spark-SQL for faster data processing.\n\nUse machine learning and statistical modeling techniques to develop and evaluate algorithms to\nimprove performance, quality, data management and accuracy\n\nBuilt Aws Lambda function in python and API Gateway\n\nEnv - Python,Java,Pyspark,Spark Straming,Aws,Hive,Hortonworks,Kafka, Devops\n\nCOGNIZANT Chennai\n04/2014 \u2014 01/2019 Technical Manager\n\n\u00b0\n\nInvolved in projects implementing Data Lake Architecture, Big Data Analytics and Modern Data\nwarehouse application\n\nBuilt the sqoop, HDFS, Spark, Hive Data Processing pipeline and delivering large scale and reusable\nproduct\n\nArchitecting,Solutioning and Modeling DI (Data Integrity) Platforms using Spark,kafka,Spark\nStreaming and Cassandra.\n\nDeveloped Spark code using Scala and Spark-SQL/Streaming for faster processing of data\n\nAll the data was loaded from our relational netezza ,teradata,Oracle databases to HIVE using Sqoop\nDeveloped Map reduce program to extract the oracle xml blob data\n\nBuilt the Hadoop Datalake in HDFS from netezza and Teradata\n\n04/2010 \u2014 03/2014\n\n05/2007\u2014 04/2010\n\n07/2006 \u2014 05/2007\n\nEDUCATION\n2000 \u2014 2003\n\n1997 \u2014 1999\n\nTECHNICAL\nSKILLS\n\n\u00ab Working on POC\u2019s in implementing Spark and Hadoop applications using java, and Scala\n\u00a2 Involved in Technical and Functional reviews.\n\u00ab Unit testing and integration testing of owned use cases\n\nEnv - Spark,Scala,Python,Spark Streaming,Kafka,Cassandra,Hive,Sqoop,A WS,Maven\n\nCGI Chennai\nConsultant\n\u00ab Responsible for attending the client Call involved Requirement Gathering, Requirement Analysis and\ndesign\n\u00a2 Responsible for planning and assigning tasks, monitoring, tracking to closure on a daily basis\n\u00a2 Built Web application using JZEE 7, HTML5,CSS3,JavaScript, JSON,AJAX,Spring MVC 4.x,\nSpring Core and Spring Security\n\u00a2 Involved in Preparing the schema and WSDL files\n\u00a2 Produced as well as consumed the WSDL based web services using WSDL, SOAP, JAX-WS, AXIS,\nApache CXF, JAXB\n\u00ab Developed web services using Restful technology to support JSON using JAX-RS.\n\u00ab involved in writing SQL & PL/SQL \u2014 Stored procedures, functions, triggers etc.\n\u00ab Involved in designing the application by drawing UML diagrams using Star UML\n\u00a2 Involved in Technical and Functional reviews.\n\u00a2 Data load in Active MQ Messaging System\nEnv - Java, J2EE, Web Service, JMS, XML, JSON, SOA, REST, SOAP, WSDL,Spring, Spring\nboot,CXF, Oracle 11g, Log4J, SVN, Maven, Tomcat 6.0, Agile\n\nMAHINDRA SATYAM Chennai\nSenior Software Engineer\n\n\u00a2 Involved in the requirement analysis, design, and development of the project\n\n\u00a2 Designed UI using JSP, templates, JavaScript, CSS, JQuery and JSON\n\n\u00ab Enhanced the FAS system using Struts.\n\n\u00a2 Involved in writing services to write core logic for business processes\n\n\u00ab Implemented Client side validations using JavaScript.\n\n\u00a2\u00ab Worked to produce the message into active MQ\n\nEnv - Java/J2ee ,Spring ,Hibernate,SOAP,REST Web Service, JSP,Eclipse,Maven\n\nWhite House Business Solutions\n\nTeam Lead\n\u00a2 Responsible for planning and assigning tasks, monitoring, tracking to closure on a daily basis\n\u00a2 Involving in Code Review and deployment\n\nEnv - Java/J2ee JSP,Eclipse,Maven\n\nMANONMANIAM SUNDARANAR UNIVERSITY MCA (Computer Science)\nTirunelveli, Tamil Nadu\nSVN COLLEDGE MSC (Chemistry)\n\nMadurai Kamarajar University, Tamil Nadu\n\nHardware / Platforms - Windows, Unix,Linux\n\nTechnology - Hadoop 3.2.1, Y ARN,Spark,Pyspark,Spark Streaming,Spark SQL, ,Python, Scala,\nJava,Amazon Cloud, Kafka, Mapreduce, Hive,Sqoop,Oozie,MachineLearning, SOAP, REST,\nAws, Glue, LLambda,Redshift,Gloudformation,State Machine,Sns,,Sqs,,Api Gateway\nProgramming Languages - Python, Scala, Java, J2EE.\n\nDatabases - Cassandra, Oracle DB, MS SQL.\n\nScripting Languages - Java Script,Shell Script\n\nTools Eclipse, Intellji,pycharm, Oracle SQL Developer, STS, Putty, JMS,Winscp, Maven, Jenkins,\nDevops,SOAPUI, Rest Client.\n\nVersion Control Systems - Git Bitbucket ,SVN,Accurev.\n\nEXPERIENCE\n\nAround 18+ years of IT experience,including 8 years of experience in dealing with\nSUMMARY\n\n\u00ab AWS,Cloudformation,Aws Glue,Aws Lambda ,EMR,Glue Catalog, Aws Athena,Aws Step\nFunction,RDS,Dynamo Db, Redshift, AI,Machine Learning,Apache Hadoop Ecosystem like\nHDFS,YARN, Python,Pyspark 3.2.1,Scala 2.12.0,Spark,Hive 2.1.1,MapReduce, ,Sqoop\n1.99.7,Cassandra and Big Data Analytics and 8 years of experience in Development and Support of\nCore Java,Spring,SOA,SOAP ,REST Web services, JSP,Servlet,JavaScript,XML and Json\n\n\u00ab 8 Years\u2019 Experience in a Big Data technology,Experience in designing,developing and delivering\nlarge-scale Big Data projects\n\n\u00a2 5 Years\u2019 Experience in Python,Pyspark,Aws and 1 year Experience in Machine Learning\n\n\u00a2 10 Years\u2019 Experience in java and complete project life cycle(design, development,testing and\nimplementation)of Client Server and Web applications\n\n\u00ab Work with product owners,business SME and data ingestion and reporting architects to identify\nrequirements and consolidate enterprise data model consistent with business processes\n\n\u00a2 Involved in projects implementing Data Lake Architecture,Big Data Analytics and Modern Data\nwarehouse application\n\n\u00a2 Architecting,Solutioning and Modeling DI(Data Integrity)Platforms using Spark,kafka,Spark\n\n\u00a2 Streaming and Cassandra,Expertise and work Experience in Amazon web service\n\n\u00a2 Exposure and working expertise in Spark, PySpark, Python, Scala and Java Experience with\n\n\u00ab AWS such Cloudformation,As Glue,Aws lambda,Rds,Redis\n\n\u00ab Strong experience in writing applications using python using different data science libraries like\nPandas,numpy,matplotlib,seaborn and scikit\n\n\u00ab Used Sqoop to efficiently transfer data between Oracle,Netezza, Teradata databases and HDFS\n\n\u00ab Ingesting wide variety of data like structured, unstructured and semi structured into the Big data eco\nsystems with batch processing, real time streaming\n\n\u00ab Experience in NOSQL databases like Cassandra\n\n\u00ab Have good understanding and implementation of UML and Java Design Patterns\n\n\u00ab Build AWS Lambda Function in Python and Built the Api Gateway\n\n\u00ab Managed Docker orchestration and Docker containerization using Kubernetes\n\n\u00ab Deploy and Run Spark Application in AWS EMR and have experienced with $3,EC2,\nAWS VPC and subnet,Public and private Gateway\n\nClient\nSummary Nexus recommendation Engine\n\nCredit and compliance Risk Core Banking\n\nAIG is an insurance Company. Providing policy Health benefits for customers.\n\nPHR - Patient health Record Portal aetna\n\nAig Companies offer a variety of term life insurance products that fit your needs, time frame, and budget\nBT - HQNS is a SOA oriented application. It\u2019s a label management system for telecommunication. Big\nservice provider for telecom. Doing the B2B service between EE to BTIWLMS and integrating the trend\nsystem like PCM, RBM, Netllynk and Orange. Customer can get the Line, Calls and broadband\nconnections and all related service.\n\nCITCO The Citco Group is a worldwide group of independent financial service providers, comprised of\nInternational banks trust and fund services companies. Citco Group companies provide corporate/fiduciary,\nfund administration and banking as well as data processing services. Citco intends to develop a \u201cNext\nGeneration Application for Custodial Services\u201d that can cater to the growing demands of. the online\nbanking and custodial services industry",
+      "links": {
+        "web_links": [],
+        "linkedin_links": [],
+        "github_links": [],
+        "stackoverflow_links": [],
+        "email_links": [
+          "kesavan7000@gmail.com"
+        ],
+        "text_links": [],
+        "annotation_links": []
+      }
+    }
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/117225/resume_pdf/18baf3f0ce4bad21f3d8d659e5e59ce6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4dce0e444cceed0c389c135edb3c8380c325ee262ab1621d00eeb829ee4e11fc",
+    "status_code": 500,
+    "duration": 70.25368022918701,
+    "timestamp": "2024-11-11T19:58:59.650650",
+    "error": "{\"detail\":\"\"}"
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/148755/resume_pdf/030cb119a7644b6fd316c1276fc06dab.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=aa1208a33e04eac95025e131a187078e82c405c80a5688b47601d1c30a36190e",
+    "status_code": 500,
+    "duration": 70.25311183929443,
+    "timestamp": "2024-11-11T19:58:59.650366",
+    "error": "{\"detail\":\"\"}"
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/137921/resume_pdf/61a2aaa0bb18cbf94c730a6805354d57.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=45c8dcbf2717435b1200aecc917ebbdcfdd8cea0a1f7b39b8db8538ad481e430",
+    "status_code": 200,
+    "duration": 13.01674485206604,
+    "timestamp": "2024-11-11T19:58:02.414206",
+    "response": {
+      "filename": "61a2aaa0bb18cbf94c730a6805354d57.pdf",
+      "content_type": "application/pdf",
+      "detected_mime_type": "application/pdf",
+      "extraction_method": "ocr",
+      "extracted_text": "Praful Rana\n\n7011664408 - prafulrana23@gmail.com ,\nLinkedIn- Praful Rana , Noida, India\n\nSENIOR SOFTWARE ENGINEER\n\nAs a Senior Software Engineer at Naukri.com (Info Edge), | offer 4 years and 8 months of comprehensive expertise in the complete software\ndevelopment life cycle with a focus on React, JavaScript, and other front-end libraries and frameworks. My skill set includes proficiency in JavaScript,\nTypescript, HTML 5, CSS, Material Ul, Redux, HTML, server-side rendering, client-side rendering, Page optimization, code optimization, and React Native,\nenabling me to build, develop, and manage applications and programs for Naukri. | implemented multiple new features in Naukri and Shikha.com\nAdditionally, | possess adeptness in debugging. My goal is to effectively deploy well-crafted user interfaces within applications. Skilled in managing\nscrum teams as Scrum Master for efficient project delivery. Demonstrated ability to deliver high-quality, scalable software solutions. Strong problem-\nsolving skills and commitment to continuous learning and improvement\n\nKEY SKILLS\n\n. React js . JavaScript . HTML 5\n\n. Next js . Typescript . CSS/Scss\n. ExpressJs \u00b0 JQuery . Algorithms\n\u00b0 Data Structures e SEO . Material UI\n. Redux \u00b0 SSR . Bootstrap\ne React Native \u00b0 CSR . Accessibility\n\u00b0 React-Streaming e Page Performance - (INP, LCP, CLS, \u00b0 Node JS\n\nTTFB)\n\nPROFESSIONAL EXPERIENCE\n\nNaukri.com (Info Edge) Aug 2022 - Present\n\nSenior Software Engineer\n\ne Executed a comprehensive revamp of multiple Naukri Learning application to Shiksha Online.\n\ne Build 20+ new widgets throughout the website, Improve page performance by various optimization techniques.\n\ne Implement multiple analytics tracking such as GA4, events etc in through out the application\n\ne Improve Google page score from 70% to 90% in multiple naukri pages.\n\ne Increase accessibilty score from 60% to 88% in Naukri.\n\ne Improve INP from 800ms to 150ms, LCP from 4000ms to 1500ms, TBT from 2000ms to 1000ms, main thread breakdown to 3000ms to 1000ms in\nNaukri and Shiksha applications\n\ne Develop whole new module for shiksha online from scratch Shiksha Online.\n\ne Implement react server streaming in application.\n\ne Upgrade react 18 of Naukri and Shiksha application.\n\n\u00a2 Take full ownership of exam pages, article pages, rank predictor pages , homepages, content wrting tools for Shiksha (CMS).\n\ne Implement APM in node for Shiksha Application to monitor performance.\n\ne Led Team in Shiksha Online Product Development - Spearheaded a team of engineers to overhaul the Education flow for the product, driving\ninnovation and enhancing user experience.\n\ne Scrum Master Leadership - Successfully served as Scrum Master for the team for 1 year, facilitating agile project management practices and\nensuring timely delivery of high-quality software.\n\n\u00a2 Conducted Organization-wide Knowledge Sharing Session - Organized and conducted a knowledge sharing session across the organization to\nenhance new React features\n\ne Performs code reviews of other team members and recommend changes to improve code quality.\n\nQualitest June 2019 - Aug 2022\n\nSoftware Engineer\n\nKidbiz (11/21 - 09/22)\ne KidBiz3000 is focused on helping second- through fifth-graders develop reading comprehension, vocabulary, and writing skills.\ne Working in client - side in a large team of 25 members and using an Agile Methodology for the sprint planning and scrum calls.\ne Developing the Ul based on both Class and Functional Based Components and improving the code quality using cypress Test-Cases, create all the\ncomponents fully accessible.\n\nSmarty Ants (4/21 - 11/21)\ne Smarty Ants Reading World is a comprehensive online reading program that uses (Flash) game-based learning to help kids build their literacy\nmuscles to become strong early readers.\ne Developing Ul based on Class-Based Component and Using Mobix for the Store Management and also creating custom Components without\nusing any UI Framework and also implementing Pagination for rendering huge data.\n\nSonu Sood's Ilaaj India (1/21 - 4/21)\n\u00a2 Create a portal with sonu sood to provide free services to the peoples who are in need.\n\nWeag Accessibility tool (9/2019 - 10/2020)\ncreate UI of accessibility tool which search accessibility issues in\nall the pages of websites in just one click as per WCAG guidelines\n\nEDUCATION\nJaypee Instiute of Information\nTechnology , Noida\nB-Tech - Computer Science and\nEngineering\n\nJ.K.G. Sr. Sec School\n12th - 92%",
+      "links": {
+        "web_links": [
+          "https://www.shiksha.com/mba/cat-exam",
+          "https://www.shiksha.com/online-courses/"
+        ],
+        "linkedin_links": [
+          "https://www.linkedin.com/in/praful-rana-927b4813a/"
+        ],
+        "github_links": [],
+        "stackoverflow_links": [],
+        "email_links": [],
+        "text_links": [],
+        "annotation_links": [
+          "https://www.shiksha.com/mba/cat-exam",
+          "https://www.linkedin.com/in/praful-rana-927b4813a/",
+          "https://www.shiksha.com/online-courses/"
+        ]
+      }
+    }
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/55060/resume_pdf/9bef582eb615b4b43f4339becfff1971.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6d00e145ea172392e2d58e7412aed87ab4cf35f60c7469f5d1957f087e922e93",
+    "status_code": 500,
+    "duration": 70.25196981430054,
+    "timestamp": "2024-11-11T19:58:59.649629",
+    "error": "{\"detail\":\"\"}"
+  },
+  {
+    "url": "https://flexiple-platform-production.s3.amazonaws.com/store/profile/8536/resume_pdf/9c57896ae4d7b4d68a994e78c0a8e4c7.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2J2BYOVKCZQ7Y7MB%2F20241106%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241106T115504Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e3c526d58bc66c437943becf2d6beb17493ebbbfe24ee97c81d2840ad9371fcb",
+    "status_code": 500,
+    "duration": 70.25308084487915,
+    "timestamp": "2024-11-11T19:58:59.650933",
+    "error": "{\"detail\":\"\"}"
+  }
+]
