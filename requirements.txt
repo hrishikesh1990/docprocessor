@@ -6,3 +6,4 @@ pytesseract
 Pillow
 pdf2image
 python-magic
+PyPDF2==3.0.1
