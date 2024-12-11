@@ -10,6 +10,9 @@ import boto3
 from urllib.parse import urlparse, parse_qs
 from botocore.exceptions import ClientError
 import os
+import asyncio
+import PyPDF2
+from io import BytesIO
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +32,9 @@ SUPPORTED_MIME_TYPES = {
     'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 }
+
+MAX_PAGES = 10
+MAX_PROCESSING_TIME = 100  # seconds
 
 def get_s3_client():
     return boto3.client('s3')
@@ -75,6 +81,33 @@ def get_mime_type_from_filename(filename: str) -> str:
     ext = os.path.splitext(filename.lower())[1]
     return extension_map.get(ext)
 
+async def check_pdf_pages(content: bytes) -> int:
+    """Check number of pages in a PDF document"""
+    try:
+        pdf_file = BytesIO(content)
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        return len(pdf_reader.pages)
+    except Exception as e:
+        logger.error(f"Error checking PDF pages: {str(e)}")
+        raise HTTPException(
+            status_code=400,
+            detail="Unable to read PDF document"
+        )
+
+async def process_with_timeout(processor: DocumentProcessor) -> tuple:
+    """Process document with timeout"""
+    try:
+        # Create task for processing
+        task = asyncio.create_task(asyncio.to_thread(processor.process))
+        # Wait for task completion with timeout
+        extracted_text, method_used = await asyncio.wait_for(task, timeout=MAX_PROCESSING_TIME)
+        return extracted_text, method_used
+    except asyncio.TimeoutError:
+        raise HTTPException(
+            status_code=408,
+            detail=f"Processing timeout exceeded {MAX_PROCESSING_TIME} seconds"
+        )
+
 @app.get("/")
 async def root() -> Dict[str, str]:
     return {"status": "running"}
@@ -97,7 +130,6 @@ async def process_document(
         # Handle URL input
         if url:
             logger.info(f"Processing URL: {url}")
-            # Remove S3 URL handling since these are public URLs
             async with httpx.AsyncClient(
                 verify=False,
                 follow_redirects=True,
@@ -114,26 +146,30 @@ async def process_document(
                         detail=f"Could not download file from URL. Status code: {response.status_code}"
                     )
                 content = response.content
-                filename = url.split('/')[-1].split('?')[0]  # Clean up filename
+                filename = url.split('/')[-1].split('?')[0]
                 content_type = response.headers.get('content-type', '')
-                logger.info(f"Downloaded file: {filename}, content-type: {content_type}")
-        # Handle file upload
         else:
             content = await file.read()
             filename = file.filename
             content_type = file.content_type
-            logger.info(f"Processing uploaded file: {filename}, content-type: {content_type}")
 
         # Verify file type
         mime_type = magic.from_buffer(content, mime=True)
         logger.info(f"Detected MIME type: {mime_type}")
         
+        # Check PDF page count if it's a PDF
+        if mime_type == 'application/pdf' or (mime_type == 'application/octet-stream' and filename.lower().endswith('.pdf')):
+            num_pages = await check_pdf_pages(content)
+            if num_pages > MAX_PAGES:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"PDF exceeds maximum allowed pages ({MAX_PAGES})"
+                )
+
         if mime_type == 'application/octet-stream':
-            # Try to determine type from filename
             filename_mime_type = get_mime_type_from_filename(filename)
             if filename_mime_type and filename_mime_type in SUPPORTED_MIME_TYPES:
                 mime_type = filename_mime_type
-                logger.info(f"Using file extension to determine MIME type: {mime_type}")
             else:
                 raise HTTPException(
                     status_code=400,
@@ -144,10 +180,10 @@ async def process_document(
                 status_code=400,
                 detail=f"Unsupported file type: {mime_type}. Supported types: {', '.join(SUPPORTED_MIME_TYPES)}"
             )
-        
-        # Process document
+
+        # Process document with timeout
         processor = DocumentProcessor(content, mime_type)
-        extracted_text, method_used = processor.process()
+        extracted_text, method_used = await process_with_timeout(processor)
         
         result = {
             "filename": filename,
