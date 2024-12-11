@@ -31,6 +31,8 @@ class DocumentProcessor:
         if self._extracted_text is not None:
             return self._extracted_text, self._extraction_method
 
+        extraction_errors = []
+
         # Try OCR first for all file types
         try:
             logger.info("Attempting OCR extraction as primary method")
@@ -38,36 +40,58 @@ class DocumentProcessor:
             if self._extracted_text.strip():
                 return self._extracted_text, self._extraction_method
         except Exception as e:
-            logger.error(f"OCR extraction failed: {str(e)}")
+            error_msg = f"OCR extraction failed: {str(e)}"
+            logger.error(error_msg)
+            extraction_errors.append(error_msg)
 
-        # If OCR fails, try format-specific fallbacks
+        # Format-specific fallbacks with detailed errors
         if self.mime_type == 'application/pdf':
             try:
                 logger.info("Attempting PyMuPDF extraction for PDF")
                 self._extracted_text, self._extraction_method = self._process_pymupdf()
-                return self._extracted_text, self._extraction_method
+                if self._extracted_text.strip():
+                    return self._extracted_text, self._extraction_method
+                else:
+                    error_msg = "PyMuPDF extraction produced empty text"
+                    logger.error(error_msg)
+                    extraction_errors.append(error_msg)
             except Exception as e:
-                logger.error(f"PyMuPDF extraction failed: {str(e)}")
+                error_msg = f"PyMuPDF extraction failed: {str(e)}"
+                logger.error(error_msg)
+                extraction_errors.append(error_msg)
 
         elif self.mime_type in ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']:
-            # Try docx extraction first
             try:
                 logger.info("Attempting DOCX extraction")
                 self._extracted_text, self._extraction_method = self._process_docx()
                 if self._extracted_text.strip():
                     return self._extracted_text, self._extraction_method
+                else:
+                    error_msg = "DOCX extraction produced empty text"
+                    logger.error(error_msg)
+                    extraction_errors.append(error_msg)
             except Exception as e:
-                logger.error(f"DOCX extraction failed: {str(e)}")
+                error_msg = f"DOCX extraction failed: {str(e)}"
+                logger.error(error_msg)
+                extraction_errors.append(error_msg)
 
-            # If docx fails, try PyMuPDF as final fallback
             try:
                 logger.info("Attempting PyMuPDF extraction for DOC/DOCX")
                 self._extracted_text, self._extraction_method = self._process_pymupdf()
-                return self._extracted_text, self._extraction_method
+                if self._extracted_text.strip():
+                    return self._extracted_text, self._extraction_method
+                else:
+                    error_msg = "PyMuPDF extraction produced empty text"
+                    logger.error(error_msg)
+                    extraction_errors.append(error_msg)
             except Exception as e:
-                logger.error(f"PyMuPDF extraction failed: {str(e)}")
+                error_msg = f"PyMuPDF extraction failed: {str(e)}"
+                logger.error(error_msg)
+                extraction_errors.append(error_msg)
 
-        raise Exception("All extraction methods failed")
+        # If all methods fail, raise a detailed error
+        error_summary = " | ".join(extraction_errors)
+        raise ValueError(f"All extraction methods failed. Details: {error_summary}")
 
     def _process_ocr(self) -> Tuple[str, ExtractionMethod]:
         """Extract text using OCR"""

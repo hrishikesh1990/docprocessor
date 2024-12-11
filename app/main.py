@@ -196,6 +196,31 @@ async def process_document(
         logger.info("Processing completed successfully")
         return result
         
+    except HTTPException as he:
+        # Re-raise HTTP exceptions as they already have proper error details
+        raise he
+    except asyncio.TimeoutError:
+        logger.error("Processing timeout exceeded", exc_info=True)
+        raise HTTPException(
+            status_code=408,
+            detail=f"Document processing timed out after {MAX_PROCESSING_TIME} seconds"
+        )
+    except ValueError as ve:
+        logger.error(f"Validation error: {str(ve)}", exc_info=True)
+        raise HTTPException(
+            status_code=400,
+            detail=f"Validation error: {str(ve)}"
+        )
+    except ClientError as ce:
+        logger.error(f"AWS S3 error: {str(ce)}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"S3 operation failed: {str(ce)}"
+        )
     except Exception as e:
         logger.error(f"Error processing document: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
+        error_detail = str(e) if str(e) else "An unexpected error occurred during document processing"
+        raise HTTPException(
+            status_code=500,
+            detail=error_detail
+        )
