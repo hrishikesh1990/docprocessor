@@ -44,7 +44,7 @@ SUPPORTED_MIME_TYPES = {
 }
 
 MAX_PAGES = 10
-MAX_PROCESSING_TIME = 100  # seconds
+MAX_PROCESSING_TIME = 300  # seconds
 
 def get_s3_client():
     return boto3.client('s3')
