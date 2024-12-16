@@ -13,6 +13,7 @@ import os
 import asyncio
 import PyPDF2
 from io import BytesIO
+from fastapi.responses import JSONResponse
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -23,6 +24,15 @@ app = FastAPI(
     description="API for processing documents and extracting text",
     version="1.0.0"
 )
+
+@app.exception_handler(asyncio.TimeoutError)
+async def timeout_exception_handler(request, exc):
+    return JSONResponse(
+        status_code=524,
+        content={
+            "detail": f"The request took too long to process and exceeded the {MAX_PROCESSING_TIME} second timeout limit. Please try with a smaller document or contact support if this persists."
+        }
+    )
 
 SUPPORTED_MIME_TYPES = {
     'application/pdf',
@@ -103,9 +113,10 @@ async def process_with_timeout(processor: DocumentProcessor) -> tuple:
         extracted_text, method_used = await asyncio.wait_for(task, timeout=MAX_PROCESSING_TIME)
         return extracted_text, method_used
     except asyncio.TimeoutError:
+        logger.error(f"Document processing timed out after {MAX_PROCESSING_TIME} seconds")
         raise HTTPException(
-            status_code=408,
-            detail=f"Processing timeout exceeded {MAX_PROCESSING_TIME} seconds"
+            status_code=524,  # Using 524 to match the error code you're seeing
+            detail=f"The request took too long to process and exceeded the {MAX_PROCESSING_TIME} second timeout limit. Please try with a smaller document or contact support if this persists."
         )
 
 @app.get("/")
@@ -202,8 +213,8 @@ async def process_document(
     except asyncio.TimeoutError:
         logger.error("Processing timeout exceeded", exc_info=True)
         raise HTTPException(
-            status_code=408,
-            detail=f"Document processing timed out after {MAX_PROCESSING_TIME} seconds"
+            status_code=524,
+            detail=f"The request took too long to process and exceeded the {MAX_PROCESSING_TIME} second timeout limit. Please try with a smaller document or contact support if this persists."
         )
     except ValueError as ve:
         logger.error(f"Validation error: {str(ve)}", exc_info=True)
